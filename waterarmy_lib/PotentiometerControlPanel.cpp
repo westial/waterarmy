@@ -1,24 +1,19 @@
-#include "ControlPanel.h"
-#include "PercentInputReader.h"
+#include "PotentiometerControlPanel.h"
 
-class PotentiometerControlPanel : public ControlPanel {
- private:
-  PercentInputReader *moistureReader;
-  PercentInputReader *wateringReader;
+PotentiometerControlPanel::PotentiometerControlPanel(
+    PercentInputReader *moistureReader,
+    PercentInputReader *wateringReader,
+    const long maxSeconds) {
+  this->moistureReader = moistureReader;
+  this->wateringReader = wateringReader;
+  this->maxSeconds = maxSeconds;
+}
 
- public:
-  PotentiometerControlPanel(
-      PercentInputReader *moistureReader,
-      PercentInputReader *wateringReader) {
-    this->moistureReader = moistureReader;
-    this->wateringReader = wateringReader;
-  }
+unsigned short PotentiometerControlPanel::getMinimumMoistureSetting() {
+  return moistureReader->readPercentInput();
+}
 
-  unsigned short getMinimumMoistureSetting() override {
-    return moistureReader->readPercentInput();
-  }
-
-  unsigned short getWaterAmountSetting() override {
-    return wateringReader->readPercentInput();
-  };
-};
+unsigned long PotentiometerControlPanel::getWaterAmountSetting() {
+  double wateringSeconds = ((double) maxSeconds) * ((double) wateringReader->readPercentInput() / 100.0);
+  return (long) wateringSeconds;
+}

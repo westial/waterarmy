@@ -19,7 +19,7 @@ Watering::Watering(
     ControlPanel *panel,
     PumpMotor *pump,
     Pauser *pauser
-    ) {
+) {
   this->sensor = sensor;
   this->pump = pump;
   this->panel = panel;

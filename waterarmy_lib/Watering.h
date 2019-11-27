@@ -29,7 +29,7 @@ class Watering {
       ControlPanel *panel,
       PumpMotor *pump,
       Pauser *pauser
-      );
+  );
   ~Watering();
   unsigned short invoke();
 

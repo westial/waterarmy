@@ -114,3 +114,7 @@ TEST(WateringTestSuite, NoIrrigationBecauseMoistureEqualLimit) {
 TEST(WateringTestSuite, NoIrrigationBecauseMoistureOverLimit) {
   ExecuteWatering(30, 20, 10, 0, 0);
 }
+
+TEST(WateringTestSuite, NoIrrigationBecauseMoistureOverLimit2) {
+  ExecuteWatering(-3, 51, 60, 0, 0);
+}

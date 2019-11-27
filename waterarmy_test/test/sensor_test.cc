@@ -17,22 +17,22 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include "gmock-global/gmock-global.h"
-#include "PercentInputConvertedSensorReader.cpp"
-#include "FunctionalRangePercentInputReader.cpp"
+#include "PercentInputConvertedSensorReader.h"
+#include "FunctionalRangePercentInputReader.h"
 #include "waterarmy_lib_mock/mocksensorfunctions.cc"
 
 using ::testing::Return;
 
 void ExecutePercentTest(const unsigned short sensorId,
-                        const long lowest,
-                        const long highest,
+                        const long minimum,
+                        const long maximum,
                         const long mockReading,
                         const long expected) {
   PercentInputReader *inputReader = new FunctionalRangePercentInputReader(
       new Percentage(),
       readSensor,
-      lowest,
-      highest,
+      minimum,
+      maximum,
       sensorId
       );
 
@@ -77,5 +77,5 @@ TEST(SensorTestSuite, MixedValues) {
  * Calculate the percent for the given lower highest than lowest value.
  */
 TEST(SensorTestSuite, InvertedRange) {
-  ExecutePercentTest(13, 100, 0, 50, 50);
+  ExecutePercentTest(13, 100, 0, 30, 70);
 }

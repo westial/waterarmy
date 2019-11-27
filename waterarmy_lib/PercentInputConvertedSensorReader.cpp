@@ -1,21 +1,20 @@
-#include "SensorReader.h"
-#include "PercentInputReader.h"
+#include "PercentInputConvertedSensorReader.h"
 
-class PercentInputConvertedSensorReader : public SensorReader {
+PercentInputConvertedSensorReader::~PercentInputConvertedSensorReader() {
+  delete percentReader;
+}
 
- private:
-  PercentInputReader *percentReader;
+PercentInputConvertedSensorReader::PercentInputConvertedSensorReader(
+    PercentInputReader *percentReader) {
+  this->percentReader = percentReader;
+}
 
- public:
-  ~PercentInputConvertedSensorReader() override {
-    delete percentReader;
+unsigned short PercentInputConvertedSensorReader::percentRead() {
+  long reading = percentReader->readPercentInput();
+  if (0 > reading) {
+    return 0;
+  } else if (100 < reading) {
+    return 100;
   }
-
-  explicit PercentInputConvertedSensorReader(PercentInputReader *percentReader) {
-    this->percentReader = percentReader;
-  }
-
-  unsigned short percentRead() override {
-    return percentReader->readPercentInput();
-  }
-};
+  return reading;
+}

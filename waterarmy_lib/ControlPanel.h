@@ -9,7 +9,7 @@ class ControlPanel {
  public:
   virtual ~ControlPanel() = default;
   virtual unsigned short getMinimumMoistureSetting() = 0;
-  virtual unsigned short getWaterAmountSetting() = 0;
+  virtual unsigned long getWaterAmountSetting() = 0;
 };
 
 #endif //WATERARMY_MAIN_WATERARMY_LIB_CONTROLPANEL_H_

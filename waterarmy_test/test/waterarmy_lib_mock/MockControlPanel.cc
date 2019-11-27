@@ -4,5 +4,5 @@
 class MockControlPanel : public ControlPanel {
  public:
     MOCK_METHOD(unsigned short, getMinimumMoistureSetting, (), (override));
-    MOCK_METHOD(unsigned short, getWaterAmountSetting, (), (override));
+    MOCK_METHOD(unsigned long, getWaterAmountSetting, (), (override));
 };

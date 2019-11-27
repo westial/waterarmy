@@ -20,8 +20,8 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include "gmock-global/gmock-global.h"
-#include "PotentiometerControlPanel.cpp"
-#include "FunctionalRangePercentInputReader.cpp"
+#include "PotentiometerControlPanel.h"
+#include "FunctionalRangePercentInputReader.h"
 #include "waterarmy_lib_mock/mockcontrolpanelfunctions.cc"
 
 using ::testing::Return;
@@ -49,7 +49,8 @@ TEST(ControlPanelTestSuite, BasicValues) {
 
   ControlPanel *controlPanel = new PotentiometerControlPanel(
       moisturePot,
-      wateringPot
+      wateringPot,
+      100
   );
 
   EXPECT_GLOBAL_CALL(

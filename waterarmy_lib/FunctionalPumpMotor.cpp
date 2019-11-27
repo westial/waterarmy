@@ -1,20 +1,18 @@
-#include "PumpMotor.h"
+#include "FunctionalPumpMotor.h"
 
-class FunctionalPumpMotor : public PumpMotor {
- private:
-  void (*startMotor)();
-  void (*stopMotor)();
+FunctionalPumpMotor::FunctionalPumpMotor(
+    void (*startMotor)(long),
+    void (*stopMotor)(long),
+    const long motorId) {
+  this->motorId = motorId;
+  this->startMotor = startMotor;
+  this->stopMotor = stopMotor;
+}
 
- public:
-  FunctionalPumpMotor(void (*startMotor)(), void (*stopMotor)()) {
-    this->startMotor = startMotor;
-    this->stopMotor = stopMotor;
-  }
+void FunctionalPumpMotor::start() {
+  startMotor(motorId);
+}
 
-  void start() override {
-    startMotor();
-  }
-  void stop() override {
-    stopMotor();
-  }
-};
+void FunctionalPumpMotor::stop() {
+  stopMotor(motorId);
+}

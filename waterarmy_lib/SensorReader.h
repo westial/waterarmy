@@ -7,8 +7,8 @@
 
 class SensorReader {
  public:
-    virtual ~SensorReader() = default;
-    virtual unsigned short percentRead() = 0;
+  virtual ~SensorReader() = default;
+  virtual unsigned short percentRead() = 0;
 };
 
 #endif //WATERARMY_MAIN_WATERARMY_LIB_SENSORREADER_H_

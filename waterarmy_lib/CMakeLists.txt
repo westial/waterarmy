@@ -6,7 +6,7 @@ set(HEADER_FILES
         SensorReader.h
         ControlPanel.h
         Pauser.h
-        wateringfunctions.h Percentage.cpp Percentage.h PercentInputReader.h)
+        wateringfunctions.h Percentage.cpp Percentage.h PercentInputReader.h PotentiometerControlPanel.h PercentInputConvertedSensorReader.h FunctionalPumpMotor.h FunctionalPauser.h)
 
 set(SOURCE_FILES
         Watering.cpp

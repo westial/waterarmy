@@ -1,36 +1,19 @@
-#ifndef WATERARMY_MAIN_WATERARMY_LIB_FUNCTIONALRANGEPERCENTINPUTREADER_H_
-#define WATERARMY_MAIN_WATERARMY_LIB_FUNCTIONALRANGEPERCENTINPUTREADER_H_
+#include "FunctionalRangePercentInputReader.h"
+FunctionalRangePercentInputReader::FunctionalRangePercentInputReader(
+    Percentage *percentage,
+    long (*readInputFunc)(const long),
+    long minimum,
+    long maximum,
+    long readerId) {
+  this->percentage = percentage;
+  this->readInputFunc = readInputFunc;
+  this->minimum = minimum;
+  this->maximum = maximum;
+  this->readerId = readerId;
 
-#include "PercentInputReader.h"
-#include "Percentage.h"
+}
 
-
-class FunctionalRangePercentInputReader : public PercentInputReader {
- private:
-  Percentage *percentage;
-  long (*readInputFunc)(const long);
-  long lowest;
-  long highest;
-  long readerId;
-
- public:
-  FunctionalRangePercentInputReader(
-      Percentage *percentage,
-      long (*readInputFunc)(const long),
-      long lowest,
-      long highest,
-      long readerId) {
-    this->percentage = percentage;
-    this->readInputFunc = readInputFunc;
-    this->lowest = lowest;
-    this->highest = highest;
-    this->readerId = readerId;
-  }
-
-  long readPercentInput() override {
-    long reading = readInputFunc(readerId);
-    return percentage->calculate(lowest, highest, reading);
-  }
-};
-
-#endif // WATERARMY_MAIN_WATERARMY_LIB_FUNCTIONALRANGEPERCENTINPUTREADER_H_
+long FunctionalRangePercentInputReader::readPercentInput() {
+  long reading = readInputFunc(readerId);
+  return percentage->calculate(minimum, maximum, reading);
+}
