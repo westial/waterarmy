@@ -6,10 +6,26 @@ set(HEADER_FILES
         SensorReader.h
         ControlPanel.h
         Pauser.h
-        wateringfunctions.h Percentage.cpp Percentage.h PercentInputReader.h PotentiometerControlPanel.h PercentInputConvertedSensorReader.h FunctionalPumpMotor.h FunctionalPauser.h)
+        wateringfunctions.h
+        Percentage.cpp
+        Percentage.h
+        PercentInputReader.h
+        PotentiometerControlPanel.h
+        PercentInputConvertedSensorReader.h
+        FunctionalPumpMotor.h
+        FunctionalPauser.h
+        )
 
 set(SOURCE_FILES
         Watering.cpp
-        PercentInputConvertedSensorReader.cpp Percentage.cpp Percentage.h PotentiometerControlPanel.cpp PercentInputReader.h FunctionalRangePercentInputReader.cpp FunctionalPumpMotor.cpp FunctionalPauser.cpp)
+        PercentInputConvertedSensorReader.cpp
+        Percentage.cpp
+        Percentage.h
+        PotentiometerControlPanel.cpp
+        PercentInputReader.h
+        FunctionalRangePercentInputReader.cpp
+        FunctionalPumpMotor.cpp
+        FunctionalPauser.cpp
+        )
 
 add_library(waterarmy_lib STATIC ${SOURCE_FILES} ${HEADER_FILES})
