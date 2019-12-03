@@ -30,6 +30,7 @@ class Watering {
       PumpMotor *pump,
       Pauser *pauser
   );
+
   ~Watering();
   unsigned short invoke();
 
