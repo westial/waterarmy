@@ -32,7 +32,7 @@ class Watering {
   );
 
   ~Watering();
-  unsigned short invoke();
+  auto invoke() -> unsigned short;
 
 };
 
