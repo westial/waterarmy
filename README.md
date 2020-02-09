@@ -57,4 +57,5 @@ You can find the very basic script installed on RaspberryPi as a service in /rpi
 
 ## Author
 
-Jaume Mila <jaume@westial.com>
+Jaume Mila 
+<[jaume@westial.com](mailto:jaume@westial.com)>
