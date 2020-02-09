@@ -41,6 +41,12 @@ The abstracted use case uses some interfaces to get the business work in the mai
 
 The Arduino implementation takes every Watering use case dependency interface and provides its implementation for Arduino Nano. After it injects the dependencies into the use case constructor and invokes it every interval. There is only a little logic in the Arduino loop() method.
 
+### Cloud logging
+
+I used LoRa device to send the moisture readings and the watering amount settings to the cloud. There in a AWS CloudWatch dashboard with the history chart of them.
+
+![Log](http://westial.com/waterarmy/wateringlog.png)
+
 ## Author
 
 Jaume Mila <jaume@westial.com>
