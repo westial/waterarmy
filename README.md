@@ -15,14 +15,14 @@ Other personal motives were that I'm getting introduced in IoT technologies, and
 
 ### Parts and circuit
 
-* 3 moisture sensor.
-* 3 12v water pumps. 
-* 3 relays.
-* 3 potentiometers for moisture setting.
-* 2 potentiometers for watering amount setting.
-* 1 Arduino Nano.
-* USB charger.
-* AC 110v to DC 12v power supply converter.
+* 3 moisture sensor. [OSOYOO moisture sensor](https://osoyoo.com/2018/04/29/use-arduino-to-detect-soil-moisture-and-display-daga-in-16x2-lcd/).
+* 3 12v water pumps. [Amazon JP item](https://www.amazon.co.jp/gp/product/B06XYC54XR/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
+* 3 relays. [OSOYOO relay](https://osoyoo.com/2017/08/28/arduino-lesson-1-channel-relay-module/)
+* 3 100Ω potentiometers for moisture setting. [Amazon JP item](https://www.amazon.co.jp/gp/product/B01MG0XKPQ/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1)
+* 2 100Ω potentiometers for watering amount setting.
+* 1 Arduino Nano. [Amazon JP item](https://www.amazon.co.jp/gp/product/B01F741W6O/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)
+* USB charger plug. You can find anywhere.
+* AC 110v to DC 12v power supply converter. I recicled from my old router.
 * Wires, board, sprinkles, hoses, soldering stuff,...
 
 ![Circuit Schema](http://westial.com/waterarmy/relayedwateringofficeplants_v1.jpg)
@@ -43,9 +43,17 @@ The Arduino implementation takes every Watering use case dependency interface an
 
 ### Cloud logging
 
-I used LoRa device to send the moisture readings and the watering amount settings to the cloud. There in a AWS CloudWatch dashboard with the history chart of them.
+I used LoRa device to send the moisture readings and the watering amount settings to the cloud.
 
 ![Log](http://westial.com/waterarmy/wateringlog.png)
+
+* The LoRa serial communication transmits some bytes through low radio to another LoRa device installed on a RaspberryPi. 
+* The RaspberryPi is connected by wire to internet, converts the bytes into a request to record a metric into AWS CloudWatch. 
+* I configured the  dashboard with the history chart of them and also some Alarms to get noticed when something unexpected is happening.
+
+You can find the very basic script installed on RaspberryPi as a service in /rpilora_service.
+
+![Log](http://westial.com/waterarmy/rpilora.jpg)
 
 ## Author
 
