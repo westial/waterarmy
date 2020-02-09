@@ -1,0 +1,15 @@
+[Unit]
+Description=Watering Office Plants PoC
+StartLimitIntervalSec=720
+StartLimitBurst=10
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/WateringOfficePlants/dev/loratocloudwatch.py /dev/serial0 9600
+User=pi
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=WateringPoc
+
+[Install]
+WantedBy=multi-user.target
