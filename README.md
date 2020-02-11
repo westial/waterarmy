@@ -1,4 +1,13 @@
 # waterarmy
+
+  * [Introduction](#introduction)
+  * [Prototype](#prototype)
+    + [Parts and circuit](#parts-and-circuit)
+    + [How it works](#how-it-works)
+  * [Software architecture](#software-architecture)
+  * [Cloud logging](#cloud-logging)
+  * [Author](#author)
+
 Firware for watering my office plants according their moisture level. In this Readme file I'm going to give some details about the prototype and also about the software architecture used on.
 
 ![System](http://westial.com/waterarmy/withcovers.jpg)
@@ -42,7 +51,7 @@ The abstracted use case uses some interfaces to get the business work in the mai
 
 The Arduino implementation takes every Watering use case dependency interface and provides its implementation for Arduino Nano. After it injects the dependencies into the use case constructor and invokes it every interval. There is only a little logic in the Arduino loop() method.
 
-### Cloud logging
+## Cloud logging
 
 I used LoRa device to send the moisture readings and the watering amount settings to the cloud.
 
