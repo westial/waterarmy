@@ -1,5 +1,5 @@
 # waterarmy
-Firware for a watering plants in my office according their moisture. In this Readme file I'm going to give some details about the prototype and also about the software architecture used on.
+Firware for watering my office plants according their moisture level. In this Readme file I'm going to give some details about the prototype and also about the software architecture used on.
 
 ![System](http://westial.com/waterarmy/withcovers.jpg)
 
