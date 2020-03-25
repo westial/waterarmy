@@ -30,7 +30,7 @@ Other personal motives were that I'm getting introduced in IoT technologies, and
 * 3 100Ω potentiometers for moisture setting. [Amazon JP item](https://www.amazon.co.jp/gp/product/B01MG0XKPQ/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1)
 * 2 100Ω potentiometers for watering amount setting.
 * 1 Arduino Nano. [Amazon JP item](https://www.amazon.co.jp/gp/product/B01F741W6O/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)
-* 1 Arduino Nano. [OSOYOO LoRa module](https://osoyoo.com/2018/07/26/osoyoo-lora-tutorial-how-to-use-the-uart-lora-module-with-arduino/)
+* 1 LoRa UART module. [OSOYOO LoRa module](https://osoyoo.com/2018/07/26/osoyoo-lora-tutorial-how-to-use-the-uart-lora-module-with-arduino/)
 * USB charger plug. You can find anywhere.
 * AC 110v to DC 12v power supply converter. I recicled from my old router.
 * Wires, board, sprinkles, hoses, soldering stuff,...
