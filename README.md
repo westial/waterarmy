@@ -14,9 +14,9 @@ Firware for watering my office plants according their moisture level. In this Re
 
 ## Introduction
 
-I have 3 plants in my workspace and there are some periods during year that I cannot water them properly, for vacations, travels, etc. I needed some kind of automated watering system.
+There are 3 plants in my workspace and during some periods during year I cannot water them properly, vacation, travel, etc. I needed some kind of automated watering system.
 
-Other personal motives were that I'm getting introduced in IoT technologies, and I wanted to learn about LoRa communication. 
+Moreover personal motivations like going deep into IoT and LoRa appliances and so on. 
 
 ## Prototype
 
