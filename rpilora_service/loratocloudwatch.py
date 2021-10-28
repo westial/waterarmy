@@ -147,5 +147,13 @@ if __name__ == '__main__':
                 )
             )
             continue
+        except UnicodeDecodeError as decode_error:
+            log_technical_error(
+                "{0}. Decoding error".format(
+                    decode_error,
+                )
+            )
+            continue
+
         log_watering_events(cloudwatch, events)
         print(received_data)
