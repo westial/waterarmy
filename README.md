@@ -8,7 +8,7 @@
   * [Cloud logging](#cloud-logging)
   * [Author](#author)
 
-Firware for watering my office plants according their moisture level. In this Readme file I'm going to give some details about the prototype and also about the software architecture used on.
+Firmware for watering my office plants according their moisture level. In this Readme file I'm going to give some details about the prototype and also about the software architecture used on.
 
 ![System](http://westial.com/waterarmy/withcovers.jpg)
 
