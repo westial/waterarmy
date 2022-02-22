@@ -14,7 +14,7 @@ Firmware for watering my office plants according their moisture level. In this R
 
 ## Introduction
 
-There are 3 plants in my workspace and during some periods during year I cannot water them properly, vacation, travel, etc. I needed some kind of automated watering system.
+There are 3 plants in my workspace and during some periods I cannot waterthem properly. Vacation, travel, etc. I needed some kind of automated watering system.
 
 Moreover personal motivations like going deep into IoT and LoRa appliances and so on. 
 
@@ -39,7 +39,7 @@ Moreover personal motivations like going deep into IoT and LoRa appliances and s
 
 ### How it works
 
-Every 4h it asks for moisture for every plant. If a plant is under its moisture setting it runs the watering pump according to its watering amount setting.
+Every 4h it asks for moisture to every plant. If a plant is under its moisture setting it runs the watering pump according to its watering amount setting.
 
 I included 2 watering amount setting potentiometers only. The first plant it's the biggest one and the one which needs more water. So the first plant is te 100% watering amount, and the other ones take it as a reference to measure their potentiometer values.
 
